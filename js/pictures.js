@@ -26,3 +26,5 @@ const galleryItemsSet = galleryItems.map(makeGalleryItems);
 
 const galleryElements = document.querySelector('.js-gallery')
 galleryElements.append(...galleryItemsSet);
+
+

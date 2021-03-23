@@ -24,13 +24,6 @@ function onEscKeyPress(event) {
         onModalClose(event)
     }
 
-    // if (event.code === "ArrowLeft") {
-    //     arrowLeft()
-    // }
-
-    // if (event.code === "ArrowRight") {
-    //     arrowRight()
-    // }
 };
 
  
@@ -43,4 +36,6 @@ modalOverlayElement.addEventListener('click', (event) => {
         onModalClose()
     }
 });
+
+
 
