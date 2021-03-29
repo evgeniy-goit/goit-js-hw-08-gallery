@@ -5,19 +5,26 @@ const modalButtonClose = document.querySelector('button[data-action="close-light
 const galleryElement = document.querySelector('.js-gallery');
 
 
+
 function onImageClick(event) {
     event.preventDefault();
-    window.addEventListener('keydown', onEscKeyPress);
-    modalElement.classList.add('is-open');
-    modalImageElement.src = event.target.dataset.source;
-};
+    window.addEventListener("keydown", onEscKeyPress);
+    modalElement.classList.add("is-open");
+    updateAttribute(event.target.alt, event.target.dataset.source);
+}
 
-function onModalClose(event) {
-    window.removeEventListener('keydown', onEscKeyPress);
-    modalElement.classList.remove('is-open');
-    modalImageElement.src = '';
 
-};
+
+function onModalClose() {
+    window.removeEventListener("keydown", onEscKeyPress);
+    modalElement.classList.remove("is-open");
+    updateAttribute();
+}
+
+function updateAttribute(alt = "", src = "") {
+    modalImageElement.src = src;
+    modalImageElement.alt = alt;
+}
 
 function onEscKeyPress(event) {
     if (event.code === 'Escape') {
@@ -36,6 +43,10 @@ modalOverlayElement.addEventListener('click', (event) => {
         onModalClose()
     }
 });
+
+
+
+
 
 
 
